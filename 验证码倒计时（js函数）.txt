@@ -1,0 +1,16 @@
+//倒计时（固定写法）
+        //js 定时器 setInterval 函数
+        //参数1：调用方法
+        //参数2：倒计时时间，结束触发参数1的方法
+        timeDown(){
+            let result = setInterval(() => {
+                --this.second;  //初始60s
+                this.codeTest = this.second
+                    if (this.second < 1) {
+                        clearInterval(result);
+                        this.sending = true;
+                        this.second = 60;
+                        this.codeTest = "获取验证码"
+                    }
+            }, 1000);
+        }
